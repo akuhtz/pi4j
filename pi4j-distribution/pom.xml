@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.pi4j</groupId>
+		<groupId>org.bidib.com.pi4j</groupId>
 		<artifactId>pi4j-parent</artifactId>
         <version>1.2-SNAPSHOT</version>
 	</parent>
@@ -15,69 +15,69 @@
 	<!-- PROJECT DEPENDENCIES -->
 	<dependencies>
 		<dependency>
-			<groupId>com.pi4j</groupId>
+			<groupId>org.bidib.com.pi4j</groupId>
 			<artifactId>pi4j-core</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>com.pi4j</groupId>
+			<groupId>org.bidib.com.pi4j</groupId>
 			<artifactId>pi4j-core</artifactId>
 			<version>${project.version}</version>
 			<classifier>sources</classifier>
 		</dependency>
 		<dependency>
-			<groupId>com.pi4j</groupId>
+			<groupId>org.bidib.com.pi4j</groupId>
 			<artifactId>pi4j-core</artifactId>
 			<version>${project.version}</version>
 			<classifier>javadoc</classifier>
 		</dependency>
 		<dependency>
-			<groupId>com.pi4j</groupId>
+			<groupId>org.bidib.com.pi4j</groupId>
 			<artifactId>pi4j-device</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>com.pi4j</groupId>
+			<groupId>org.bidib.com.pi4j</groupId>
 			<artifactId>pi4j-device</artifactId>
 			<version>${project.version}</version>
 			<classifier>sources</classifier>
 		</dependency>
 		<dependency>
-			<groupId>com.pi4j</groupId>
+			<groupId>org.bidib.com.pi4j</groupId>
 			<artifactId>pi4j-device</artifactId>
 			<version>${project.version}</version>
 			<classifier>javadoc</classifier>
 		</dependency>
 		<dependency>
-			<groupId>com.pi4j</groupId>
+			<groupId>org.bidib.com.pi4j</groupId>
 			<artifactId>pi4j-gpio-extension</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>com.pi4j</groupId>
+			<groupId>org.bidib.com.pi4j</groupId>
 			<artifactId>pi4j-gpio-extension</artifactId>
 			<version>${project.version}</version>
 			<classifier>sources</classifier>
 		</dependency>
 		<dependency>
-			<groupId>com.pi4j</groupId>
+			<groupId>org.bidib.com.pi4j</groupId>
 			<artifactId>pi4j-gpio-extension</artifactId>
 			<version>${project.version}</version>
 			<classifier>javadoc</classifier>
 		</dependency>
 		<dependency>
-			<groupId>com.pi4j</groupId>
+			<groupId>org.bidib.com.pi4j</groupId>
 			<artifactId>pi4j-example</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>com.pi4j</groupId>
+			<groupId>org.bidib.com.pi4j</groupId>
 			<artifactId>pi4j-example</artifactId>
 			<version>${project.version}</version>
 			<classifier>sources</classifier>
 		</dependency>
 		<dependency>
-			<groupId>com.pi4j</groupId>
+			<groupId>org.bidib.com.pi4j</groupId>
 			<artifactId>pi4j-example</artifactId>
 			<version>${project.version}</version>
 			<classifier>javadoc</classifier>
@@ -118,7 +118,7 @@
 						<configuration>
 							<artifactItems>
 								<artifactItem>
-									<groupId>com.pi4j</groupId>
+									<groupId>org.bidib.com.pi4j</groupId>
 									<artifactId>pi4j-parent</artifactId>
 									<version>${project.version}</version>
 									<classifier>license</classifier>
@@ -128,7 +128,7 @@
 									<outputDirectory>${project.build.directory}/distro-contents</outputDirectory>
 								</artifactItem>
 								<artifactItem>
-									<groupId>com.pi4j</groupId>
+									<groupId>org.bidib.com.pi4j</groupId>
 									<artifactId>pi4j-parent</artifactId>
 									<version>${project.version}</version>
 									<classifier>notice</classifier>
@@ -138,7 +138,7 @@
 									<outputDirectory>${project.build.directory}/distro-contents</outputDirectory>
 								</artifactItem>
 								<artifactItem>
-									<groupId>com.pi4j</groupId>
+									<groupId>org.bidib.com.pi4j</groupId>
 									<artifactId>pi4j-parent</artifactId>
 									<version>${project.version}</version>
 									<classifier>readme</classifier>
@@ -179,7 +179,7 @@
 						<configuration>
 							<artifactItems>
 								<artifactItem>
-									<groupId>com.pi4j</groupId>
+									<groupId>org.bidib.com.pi4j</groupId>
 									<artifactId>pi4j-example</artifactId>
 									<version>${project.version}</version>
 									<classifier>sources</classifier>

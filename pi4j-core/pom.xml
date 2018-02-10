@@ -8,7 +8,7 @@
 	<description>Pi4J Java Library for the Raspberry Pi</description>
 	<packaging>jar</packaging>
 	<parent>
-		<groupId>com.pi4j</groupId>
+		<groupId>org.bidib.com.pi4j</groupId>
 		<artifactId>pi4j-parent</artifactId>
         <version>1.2-SNAPSHOT</version>
 	</parent>
@@ -20,7 +20,7 @@
              project, including it here ensures that it gets compiled in the maven
              build lifecycle before the pi4j-core project.    -->
         <dependency>
-			<groupId>com.pi4j</groupId>
+			<groupId>org.bidib.com.pi4j</groupId>
 			<artifactId>pi4j-native</artifactId>
 			<classifier>raspberrypi-static</classifier>
 			<version>${project.version}</version>
@@ -119,7 +119,7 @@
 
                                 <!-- LIBPI4J for the Raspberry-Pi platform -->
                                 <artifactItem>
-									<groupId>com.pi4j</groupId>
+									<groupId>org.bidib.com.pi4j</groupId>
 									<artifactId>pi4j-native</artifactId>
 									<version>${project.version}</version>
                                     <classifier>raspberrypi-static</classifier>
@@ -129,7 +129,7 @@
 									<destFileName>libpi4j.so</destFileName>
 								</artifactItem>
                                 <artifactItem>
-                                    <groupId>com.pi4j</groupId>
+                                    <groupId>org.bidib.com.pi4j</groupId>
                                     <artifactId>pi4j-native</artifactId>
                                     <version>${project.version}</version>
                                     <classifier>raspberrypi-dynamic</classifier>
@@ -141,7 +141,7 @@
 
                                 <!-- LIBPI4J for the Banana-Pi platform -->
                                 <artifactItem>
-                                    <groupId>com.pi4j</groupId>
+                                    <groupId>org.bidib.com.pi4j</groupId>
                                     <artifactId>pi4j-native</artifactId>
                                     <version>${project.version}</version>
                                     <classifier>bananapi-static</classifier>
@@ -151,7 +151,7 @@
                                     <destFileName>libpi4j.so</destFileName>
                                 </artifactItem>
                                 <artifactItem>
-                                    <groupId>com.pi4j</groupId>
+                                    <groupId>org.bidib.com.pi4j</groupId>
                                     <artifactId>pi4j-native</artifactId>
                                     <version>${project.version}</version>
                                     <classifier>bananapi-dynamic</classifier>
@@ -163,7 +163,7 @@
 
                                 <!-- LIBPI4J for the Banana-Pro platform -->
                                 <artifactItem>
-                                    <groupId>com.pi4j</groupId>
+                                    <groupId>org.bidib.com.pi4j</groupId>
                                     <artifactId>pi4j-native</artifactId>
                                     <version>${project.version}</version>
                                     <classifier>bananapro-static</classifier>
@@ -173,7 +173,7 @@
                                     <destFileName>libpi4j.so</destFileName>
                                 </artifactItem>
                                 <artifactItem>
-                                    <groupId>com.pi4j</groupId>
+                                    <groupId>org.bidib.com.pi4j</groupId>
                                     <artifactId>pi4j-native</artifactId>
                                     <version>${project.version}</version>
                                     <classifier>bananapro-dynamic</classifier>
@@ -185,7 +185,7 @@
 
                                 <!-- LIBPI4J for the Sinovoip BPI (BananaPi) platform -->
                                 <artifactItem>
-                                    <groupId>com.pi4j</groupId>
+                                    <groupId>org.bidib.com.pi4j</groupId>
                                     <artifactId>pi4j-native</artifactId>
                                     <version>${project.version}</version>
                                     <classifier>bpi-static</classifier>
@@ -195,7 +195,7 @@
                                     <destFileName>libpi4j.so</destFileName>
                                 </artifactItem>
                                 <artifactItem>
-                                    <groupId>com.pi4j</groupId>
+                                    <groupId>org.bidib.com.pi4j</groupId>
                                     <artifactId>pi4j-native</artifactId>
                                     <version>${project.version}</version>
                                     <classifier>bpi-dynamic</classifier>
@@ -207,7 +207,7 @@
 
                                 <!-- LIBPI4J for the Odroid platform -->
                                 <artifactItem>
-                                    <groupId>com.pi4j</groupId>
+                                    <groupId>org.bidib.com.pi4j</groupId>
                                     <artifactId>pi4j-native</artifactId>
                                     <version>${project.version}</version>
                                     <classifier>odroid-static</classifier>
@@ -217,7 +217,7 @@
                                     <destFileName>libpi4j.so</destFileName>
                                 </artifactItem>
                                 <artifactItem>
-                                    <groupId>com.pi4j</groupId>
+                                    <groupId>org.bidib.com.pi4j</groupId>
                                     <artifactId>pi4j-native</artifactId>
                                     <version>${project.version}</version>
                                     <classifier>odroid-dynamic</classifier>
@@ -229,7 +229,7 @@
 
                                 <!-- LIBPI4J for the OrangePi platform -->
                                 <artifactItem>
-                                    <groupId>com.pi4j</groupId>
+                                    <groupId>org.bidib.com.pi4j</groupId>
                                     <artifactId>pi4j-native</artifactId>
                                     <version>${project.version}</version>
                                     <classifier>orangepi-static</classifier>
@@ -239,7 +239,7 @@
                                     <destFileName>libpi4j.so</destFileName>
                                 </artifactItem>
                                 <artifactItem>
-                                    <groupId>com.pi4j</groupId>
+                                    <groupId>org.bidib.com.pi4j</groupId>
                                     <artifactId>pi4j-native</artifactId>
                                     <version>${project.version}</version>
                                     <classifier>orangepi-dynamic</classifier>
@@ -251,7 +251,7 @@
 
                                 <!-- LIBPI4J for the NanoPi platform -->
                                 <artifactItem>
-                                    <groupId>com.pi4j</groupId>
+                                    <groupId>org.bidib.com.pi4j</groupId>
                                     <artifactId>pi4j-native</artifactId>
                                     <version>${project.version}</version>
                                     <classifier>nanopi-static</classifier>
@@ -261,7 +261,7 @@
                                     <destFileName>libpi4j.so</destFileName>
                                 </artifactItem>
                                 <artifactItem>
-                                    <groupId>com.pi4j</groupId>
+                                    <groupId>org.bidib.com.pi4j</groupId>
                                     <artifactId>pi4j-native</artifactId>
                                     <version>${project.version}</version>
                                     <classifier>nanopi-dynamic</classifier>

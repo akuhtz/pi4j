@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.pi4j</groupId>
+	<groupId>org.bidib.com.pi4j</groupId>
 	<artifactId>pi4j-parent</artifactId>
     <version>1.2-SNAPSHOT</version>
 	<name>Pi4J :: Parent POM</name>
@@ -49,9 +49,9 @@
 
 	<!-- SOURCE CONTROL -->
 	<scm>
-		<developerConnection>scm:git:ssh://git@github.com/Pi4J/pi4j.git</developerConnection>
-		<connection>scm:git:ssh://git@github.com/Pi4J/pi4j.git</connection>
-		<url>https://github.com/Pi4J/pi4j.git</url>
+		<developerConnection>scm:git:ssh://git@github.com/akuhtz/pi4j.git</developerConnection>
+		<connection>scm:git:ssh://git@github.com/akuhtz/pi4j.git</connection>
+		<url>https://github.com/akuhtz/pi4j.git</url>
 	</scm>
 
 	<!-- ISSUE MANAGEMENT -->
@@ -108,10 +108,10 @@
 	<properties>
 
         <!-- DEFAULT SETTINGS FOR REMOTELY BUILDING NATIVE LIBRARY ON A REMOTE PLATFORM -->
-        <pi4j.default.host>192.168.1.100</pi4j.default.host>
+        <pi4j.default.host>192.168.1.24</pi4j.default.host>
         <pi4j.default.port>22</pi4j.default.port>
         <pi4j.default.user>pi</pi4j.default.user>
-        <pi4j.default.password>raspberry</pi4j.default.password>
+        <pi4j.default.password>${pi4j.password}</pi4j.default.password>
         <pi4j.default.directory>pi4j-temp</pi4j.default.directory>
 
         <!-- SETTINGS FOR COPYING Pi4J ARTIFACTS TO DEVELOPMENT DEVICE/PLATFORM -->
@@ -222,6 +222,7 @@
         <maven-assembly-plugin.version>3.0.0</maven-assembly-plugin.version>
         <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
         <maven-scm-plugin.version>1.9.5</maven-scm-plugin.version>
+        <maven-surefire-plugin.version>2.12.4</maven-surefire-plugin.version>
         <maven-bundle-plugin.version>3.2.0</maven-bundle-plugin.version>
         <maven-antrun-plugin.version>1.8</maven-antrun-plugin.version>
         <native-maven-plugin.version>1.0-alpha-8</native-maven-plugin.version>
@@ -244,6 +245,10 @@
         <pi4j.gpg.key></pi4j.gpg.key>
         <pi4j.gpg.keyring></pi4j.gpg.keyring>
         <pi4j.gpg.passphrase></pi4j.gpg.passphrase>
+        
+        <gpg.useagent>true</gpg.useagent>
+        
+        <deployAtEnd>false</deployAtEnd>
 
 	</properties>
 
@@ -355,8 +360,12 @@
                                         The "{pi4j.gpg.passphrase}" property must be configured in your maven settings.xml file.
                                         (This is intended only for Pi4J public deployment)
                                     -->
+                                    <!--
 									<keyname>${pi4j.gpg.key}</keyname>
                                     <passphrase>${pi4j.gpg.passphrase}</passphrase>
+                                    -->
+                                    <passphrase>${gpg.passphrase}</passphrase>
+                                    <useAgent>${gpg.useagent}</useAgent>
 								</configuration>
 							</execution>
 						</executions>
@@ -636,7 +645,7 @@
                             <configuration>
                                 <artifactItems>
                                     <artifactItem>
-                                        <groupId>com.pi4j</groupId>
+                                        <groupId>org.bidib.com.pi4j</groupId>
                                         <artifactId>pi4j-parent</artifactId>
                                         <version>${project.version}</version>
                                         <classifier>license</classifier>
@@ -646,7 +655,7 @@
                                         <destFileName>LICENSE.txt</destFileName>
                                     </artifactItem>
                                     <artifactItem>
-                                        <groupId>com.pi4j</groupId>
+                                        <groupId>org.bidib.com.pi4j</groupId>
                                         <artifactId>pi4j-parent</artifactId>
                                         <version>${project.version}</version>
                                         <classifier>notice</classifier>
@@ -656,7 +665,7 @@
                                         <destFileName>NOTICE.txt</destFileName>
                                     </artifactItem>
                                     <artifactItem>
-                                        <groupId>com.pi4j</groupId>
+                                        <groupId>org.bidib.com.pi4j</groupId>
                                         <artifactId>pi4j-parent</artifactId>
                                         <version>${project.version}</version>
                                         <classifier>readme</classifier>
@@ -674,6 +683,12 @@
                     </executions>
                 </plugin>
 
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>2.8.2</version>
+                </plugin>
+                
                 <!-- GPG PLUGIN (used to sign JARs) -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -686,6 +701,13 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-scm-plugin</artifactId>
                     <version>${maven-scm-plugin.version}</version>
+                </plugin>
+
+                <!-- SUREFIRE PLUGIN -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${maven-surefire-plugin.version}</version>
                 </plugin>
 
                 <!-- OSGi BUNDLE -->
@@ -872,6 +894,15 @@
 
         <!-- GLOBAL BUILD PLUGINS (used when building all modules) -->
 		<plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <inherited>true</inherited>
+                <configuration>
+                    <!--updateReleaseInfo>true</updateReleaseInfo-->
+                    <deployAtEnd>${deployAtEnd}</deployAtEnd>
+                </configuration>
+            </plugin>
 
 			<!-- USE LATEST SCM PLUGIN TO SUPPORT GIT -->
 			<plugin>
