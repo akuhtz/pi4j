@@ -1,0 +1,36 @@
+image:
+  maven:3.5.2-jdk-8
+
+cache:
+  paths:
+    - .m2/
+
+variables:
+  MAVEN_OPTS: -Dmaven.repo.local=${CI_PROJECT_DIR}/.m2
+  
+before_script:
+  - export PROJECT_DIR=$PWD
+  - apt-get update -qq
+  - apt-get install -qq tree
+  - apt-get install build-essential -qq
+  - cd $HOME
+  - git clone https://github.com/raspberrypi/tools rpi-tools
+  - export PATH=$PATH:$HOME/rpi-tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/bin
+  - export ARCH=arm
+  - export CCPREFIX=$HOME/rpi-tools/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/bin/arm-linux-gnueabihf-
+  - export CC=arm-linux-gnueabihf-gcc
+  - export RPI_CROSS_COMPILE=true
+  - cd $PROJECT_DIR
+
+
+test:
+##  script: "mvn clean install"
+    # ----------------------------------------------------------------------------------
+    # Build the project including the
+    # 'pi4j-native' project using the cross-compiler profile.
+    #  ... Skip all tests.
+    #  ... Skip javadoc.
+    # ----------------------------------------------------------------------------------
+    script:
+      - mvn clean install -P all-platforms -Pcross-compile -Dmaven.javadoc.skip=false -DskipTests=true
+  
