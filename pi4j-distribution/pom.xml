@@ -512,11 +512,13 @@
         <!-- SPECIAL PROFILE FOR PUBLISHING DOWNLOAD ARTIFACTS -->
         <profile>
             <id>deploy-downloads</id>
+            <!--
             <activation>
                 <property>
                     <name>release-build</name>
                 </property>
             </activation>
+            -->
             <build>
                 <plugins>
                     <!-- this plugin will upload the ZIP and DEB packages to the public
