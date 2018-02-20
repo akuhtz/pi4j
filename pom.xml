@@ -4,7 +4,7 @@
 
 	<groupId>org.bidib.com.pi4j</groupId>
 	<artifactId>pi4j-parent</artifactId>
-    <version>1.2.M1</version>
+    <version>1.2-SNAPSHOT</version>
 	<name>Pi4J :: Parent POM</name>
 	<description>Parent Maven POM for the Pi4J Project</description>
 	<url>http://www.pi4j.com</url>
